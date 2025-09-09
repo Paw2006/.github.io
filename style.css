@@ -34,7 +34,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 23%; /* Для компьютера - смещение вверх */
+    object-position: center 18%; /* Увеличили смещение вверх для компа */
 }
 
 /* 
@@ -312,20 +312,21 @@ body {
 }
 
 /* 
- * Адаптивность для мобильных устройств (ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ)
+ * Адаптивность для мобильных устройств (ТЕЛЕФОН)
  */
 @media (max-width: 768px) {
-    /* Стили для героя-изображения на мобильных */
+    /* Исправление обрезания изображения на телефоне */
     .hero-image {
         height: 40vh;
         border-radius: 0;
-        margin-left: -15px;
-        margin-right: -15px;
-        width: calc(100% + 30px);
+        margin: 0 -20px 40px -20px; /* Увеличили отрицательные отступы */
+        width: calc(100% + 40px); /* Увеличили ширину для компенсации */
+        max-width: none;
     }
     
     .hero-image img {
-        object-position: center center; /* Центрируем для мобильных */
+        object-position: center center; /* Полное центрирование для телефона */
+        width: 100%;
     }
     
     .container {
@@ -355,6 +356,8 @@ body {
     
     .contact-section {
         padding: 20px;
+        margin: 40px -15px; /* Расширяем контактный блок на телефоне */
+        width: calc(100% + 30px);
     }
     
     .contact-section h2 {
@@ -371,6 +374,7 @@ body {
     .double-section, 
     .contact-numbers {
         flex-direction: column;
+        gap: 15px;
     }
     
     .benefit-card, 
@@ -387,6 +391,8 @@ body {
 @media (max-width: 480px) {
     .hero-image {
         height: 35vh;
+        margin: 0 -15px 30px -15px;
+        width: calc(100% + 30px);
     }
     
     .benefits-section h2,
@@ -395,12 +401,19 @@ body {
     .help-section h2 {
         font-size: 1.5em;
     }
+    
+    .contact-section {
+        margin: 30px -10px;
+        width: calc(100% + 20px);
+    }
 }
 
 /* Дополнительные стили для очень маленьких устройств */
 @media (max-width: 360px) {
     .hero-image {
         height: 30vh;
+        margin: 0 -10px 25px -10px;
+        width: calc(100% + 20px);
     }
     
     .benefit-card li,
@@ -419,4 +432,16 @@ body {
         height: 24px;
         font-size: 14px;
     }
+    
+    .contact-section {
+        padding: 15px;
+        margin: 25px -5px;
+        width: calc(100% + 10px);
+    }
+    
+    .contact-number {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
 }
+
