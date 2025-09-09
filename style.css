@@ -16,7 +16,7 @@ body {
 }
 
 /* 
- * Стили для героя-изображения
+ * Стили для героя-изображения (КОМПЬЮТЕРНАЯ ВЕРСИЯ)
  */
 .hero-image {
     position: relative;
@@ -34,7 +34,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 23%;
+    object-position: center 23%; /* Для компьютера - смещение вверх */
 }
 
 /* 
@@ -205,9 +205,9 @@ body {
 .double-section {
     display: flex;
     gap: 20px;
-    margin-bottom: 60px; /* Увеличил отступ снизу */
+    margin-bottom: 60px;
     justify-content: center;
-    align-items: stretch; /* Выравнивание по высоте */
+    align-items: stretch;
 }
 
 .requirements-section, .help-section {
@@ -222,7 +222,7 @@ body {
     font-size: 1.8em;
     margin-bottom: 20px;
     text-align: left;
-    min-height: 60px; /* Фиксированная высота для выравнивания */
+    min-height: 60px;
 }
 
 .requirements-card, .help-card {
@@ -231,7 +231,7 @@ body {
     padding: 25px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border: 1px solid #e0e0e0;
-    flex-grow: 1; /* Занимает всю доступную высоту */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
@@ -241,7 +241,7 @@ body {
     padding: 0;
     margin: 0;
     text-align: left;
-    flex-grow: 1; /* Равномерное распределение высоты */
+    flex-grow: 1;
 }
 
 .requirements-card li, .help-card li {
@@ -281,7 +281,7 @@ body {
     color: white;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     position: relative;
-    z-index: 1; /* Убедимся, что контактный блок поверх других элементов */
+    z-index: 1;
 }
 
 .contact-section h2 {
@@ -312,31 +312,22 @@ body {
 }
 
 /* 
- * Адаптивность для мобильных устройств
+ * Адаптивность для мобильных устройств (ТОЛЬКО ДЛЯ ТЕЛЕФОНОВ)
  */
-@media (max-width: 992px) {
-    .benefits-columns, .documents-columns, .double-section, .contact-numbers {
-        flex-direction: column;
-    }
-    
-    .benefit-card, .documents-card {
-        min-width: auto;
-    }
-    
+@media (max-width: 768px) {
+    /* Стили для героя-изображения на мобильных */
     .hero-image {
         height: 40vh;
+        border-radius: 0;
+        margin-left: -15px;
+        margin-right: -15px;
+        width: calc(100% + 30px);
     }
     
-    .contact-numbers {
-        gap: 20px;
+    .hero-image img {
+        object-position: center center; /* Центрируем для мобильных */
     }
     
-    .requirements-section h2, .help-section h2 {
-        min-height: auto; /* Убираем фиксированную высоту на мобильных */
-    }
-}
-
-@media (max-width: 768px) {
     .container {
         padding: 15px;
     }
@@ -373,5 +364,59 @@ body {
     .contact-number {
         font-size: 1.1em;
         padding: 12px 20px;
+    }
+    
+    .benefits-columns, 
+    .documents-columns, 
+    .double-section, 
+    .contact-numbers {
+        flex-direction: column;
+    }
+    
+    .benefit-card, 
+    .documents-card {
+        min-width: auto;
+    }
+    
+    .requirements-section h2, 
+    .help-section h2 {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image {
+        height: 35vh;
+    }
+    
+    .benefits-section h2,
+    .documents-section h2,
+    .requirements-section h2,
+    .help-section h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Дополнительные стили для очень маленьких устройств */
+@media (max-width: 360px) {
+    .hero-image {
+        height: 30vh;
+    }
+    
+    .benefit-card li,
+    .documents-card li,
+    .requirements-card li,
+    .help-card li {
+        padding-left: 30px;
+        font-size: 0.95em;
+    }
+    
+    .benefit-card li:before,
+    .documents-card li:before,
+    .requirements-card li:before,
+    .help-card li:before {
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
     }
 }
