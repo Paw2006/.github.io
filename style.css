@@ -34,7 +34,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 18%; /* Увеличили смещение вверх для компа */
+    object-position: center 18%;
 }
 
 /* 
@@ -318,14 +318,14 @@ body {
     /* Исправление обрезания изображения на телефоне */
     .hero-image {
         height: 40vh;
-        border-radius: 12px; /* Вернули закругление на телефоне */
-        margin: 0 0 40px 0; /* Убрали отрицательные отступы */
-        width: 100%; /* Вернули нормальную ширину */
+        border-radius: 12px;
+        margin: 0 0 40px 0;
+        width: 100%;
         max-width: 100%;
     }
     
     .hero-image img {
-        object-position: center center; /* Полное центрирование для телефона */
+        object-position: center center;
         width: 100%;
     }
     
@@ -339,7 +339,7 @@ body {
     .requirements-section h2,
     .help-section h2 {
         font-size: 1.8em;
-        text-align: center; /* Центрируем заголовки */
+        text-align: center;
     }
     
     .benefit-card,
@@ -347,16 +347,16 @@ body {
     .requirements-card,
     .help-card {
         padding: 20px;
-        text-align: center; /* Центрируем текст в карточках */
+        text-align: left; /* Вернули выравнивание по левому краю */
     }
     
-    /* Центрирование списков на телефоне */
+    /* Вернули маркеры на левую сторону */
     .benefit-card ul,
     .documents-card ul,
     .requirements-card ul,
     .help-card ul {
-        text-align: center; /* Центрируем текст в списках */
-        display: inline-block; /* Чтобы центрирование работало правильно */
+        text-align: left;
+        display: block;
         width: 100%;
     }
     
@@ -364,26 +364,26 @@ body {
     .documents-card li,
     .requirements-card li,
     .help-card li {
-        padding-left: 35px;
-        text-align: left; /* Текст пунктов оставляем по левому краю */
-        display: inline-block; /* Чтобы центрирование работало */
+        padding-left: 40px; /* Вернули отступ для маркеров */
+        text-align: left;
+        display: block;
         width: 100%;
         box-sizing: border-box;
     }
     
-    /* Центрирование маркеров на телефоне */
+    /* Вернули маркеры в левую сторону */
     .benefit-card li:before,
     .documents-card li:before,
     .requirements-card li:before,
     .help-card li:before {
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin-left: -20px; /* Смещаем маркеры для центрирования */
+        left: 0;
+        transform: translateY(-50%);
+        margin-left: 0; /* Убрали смещение */
     }
     
     .contact-section {
         padding: 20px;
-        margin: 40px 0; /* Вернули нормальные отступы */
+        margin: 40px 0;
         width: 100%;
     }
     
@@ -402,41 +402,54 @@ body {
     .contact-numbers {
         flex-direction: column;
         gap: 15px;
-        align-items: center; /* Центрируем колонки */
+        align-items: center;
     }
     
     .benefit-card, 
     .documents-card {
         min-width: auto;
         width: 100%;
-        max-width: 400px; /* Ограничиваем ширину для лучшего вида */
+        max-width: 400px;
     }
     
     .requirements-section h2, 
     .help-section h2 {
         min-height: auto;
-        text-align: center; /* Центрируем заголовки */
+        text-align: center;
     }
     
     /* Центрирование блоков требований и помощи */
     .requirements-section, 
     .help-section {
-        align-items: center; /* Центрируем блоки */
+        align-items: center;
         width: 100%;
     }
     
     .requirements-card, 
     .help-card {
         width: 100%;
-        max-width: 400px; /* Ограничиваем ширину для лучшего вида */
-        text-align: center; /* Центрируем текст */
+        max-width: 400px;
+        text-align: left; /* Вернули выравнивание по левому краю */
     }
     
     .requirements-card ul, 
     .help-card ul {
-        text-align: center; /* Центрируем списки */
-        display: inline-block;
+        text-align: left; /* Вернули выравнивание по левому краю */
+        display: block;
         width: 100%;
+    }
+    
+    /* Центрирование нижнего контактного блока */
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contact-numbers {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 
@@ -463,7 +476,7 @@ body {
     .documents-card li,
     .requirements-card li,
     .help-card li {
-        padding-left: 30px;
+        padding-left: 35px;
         font-size: 0.95em;
     }
     
@@ -474,7 +487,6 @@ body {
         width: 24px;
         height: 24px;
         font-size: 14px;
-        margin-left: -18px; /* Корректируем смещение для маленьких экранов */
     }
     
     .contact-section {
